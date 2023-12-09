@@ -1,6 +1,10 @@
 int ledPin = 13;
 int state = 0;
 
+int CountDiablo = 3;
+int CountMantequilla = 3;
+int CountPicnic = 3;
+
 void setup() {
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, LOW);
@@ -22,18 +26,33 @@ void loop() {
         }
       }
     case 1:
-      {
-        //galleta tipo 1 diablo
+      {//galleta tipo 1 diablo
+        if (CountDiablo > 0){
+          //codigo de servos
+          CountDiablo--;
+        }else{
+          Serial.println("Galletas Diablo Agotadas");
+        }
         state = 0;
       }
     case 2:
-      {
-        //galleta tipo 2 mantequilla
+      {//galleta tipo 2 mantequilla
+        if (CountMantequilla > 0){
+          //codigo de servos
+          CountMantequilla--;
+        }else{
+          Serial.println("Galletas Mantequilla Agotadas");
+        }
         state = 0;
       }
     case 3:
-      {
-        //galleta tipo 3 picnic
+      {//galleta tipo 3 picnic
+        if (CountPicnic > 0){
+          //codigo de servos
+          CountPicnic--;
+        }else{
+          Serial.println("Galletas Picnic Agotadas");
+        }
         state = 0;
       }
   }
